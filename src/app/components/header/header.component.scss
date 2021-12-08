@@ -14,6 +14,10 @@
     margin-left: auto;
     display: flex;
     flex-flow: row wrap;
+    .selected {
+      color: $decoration-color;
+      opacity: 0.9;
+    }
     a:not(:last-of-type) {
       margin-right: 1em;
     }

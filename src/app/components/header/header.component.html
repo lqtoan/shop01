@@ -1,7 +1,12 @@
 <header class="header">
-  <h1 routerLink="" class="header__logo">Shop01</h1>
+  <h1 routerLink="/" class="header__logo">Shop01</h1>
   <nav class="header__menu">
-    <a href="">Shop</a>
-    <a [routerLink]="['/about']">About</a>
+    <a
+      [routerLink]="['/shop']"
+      [routerLinkActive]="['selected']"
+      [routerLinkActiveOptions]="{ exact: true }"
+      >Shop</a
+    >
+    <a [routerLink]="['/about']" [routerLinkActive]="['selected']">About</a>
   </nav>
 </header>
