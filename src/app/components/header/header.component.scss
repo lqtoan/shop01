@@ -1,0 +1,21 @@
+@import "/src/assets/scss/shared";
+
+.header {
+  padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-content: flex-start;
+  cursor: pointer;
+  &__logo {
+    color: $decoration-color;
+  }
+  &__menu {
+    margin-left: auto;
+    display: flex;
+    flex-flow: row wrap;
+    a:not(:last-of-type) {
+      margin-right: 1em;
+    }
+  }
+}
