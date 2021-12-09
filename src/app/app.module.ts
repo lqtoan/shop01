@@ -1,3 +1,4 @@
+import { ProductModule } from './modules/product/product.module';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { HttpClientModule } from '@angular/common/http';
@@ -15,7 +16,7 @@ import { ProductListComponent } from './modules/product/product-list/product-lis
     AboutComponent,
     ProductListComponent,
   ],
-  imports: [BrowserModule, AppRoutingModule, HttpClientModule],
+  imports: [BrowserModule, ProductModule, AppRoutingModule, HttpClientModule],
   providers: [],
   bootstrap: [AppComponent],
 })

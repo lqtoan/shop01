@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
   providedIn: 'root'
 })
 export class HttpServerService {
-  private PRODUCT_API = 'http://localhost:3000/products';
+  private API = 'http://localhost:3000';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
@@ -17,7 +17,7 @@ export class HttpServerService {
   constructor(private httpClient: HttpClient) { }
 
   public getProducts(): Observable<IProduct[]> {
-    const url = `${this.PRODUCT_API}`;
+    const url = `${this.API}/products`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 }

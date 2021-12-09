@@ -1,8 +1,8 @@
 <div class="product-list">
   <ul>
-    <li *ngFor="let product of products">
-      <p>{{ product.name }}</p>
-      <h4>{{ product.price }}</h4>
+    <li class="product" *ngFor="let product of products">
+      <p class="product__name">{{ product.name }}</p>
+      <strong class="product__price">{{ product.price }}</strong>
     </li>
   </ul>
 </div>

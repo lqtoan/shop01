@@ -1,6 +1,7 @@
 @import "/src/assets/scss/shared";
 
 .header {
+  background: $black;
   padding: 1em;
   display: flex;
   flex-flow: row wrap;
@@ -8,18 +9,25 @@
   align-content: flex-start;
   cursor: pointer;
   &__logo {
-    color: $decoration-color;
+    color: $magenta;
   }
   &__menu {
     margin-left: auto;
     display: flex;
     flex-flow: row wrap;
     .selected {
-      color: $decoration-color;
-      opacity: 0.9;
+      color: $magenta;
+      opacity: 0.8;
+    }
+    a {
+      color: $white;
+      transition: $transition;
     }
     a:not(:last-of-type) {
       margin-right: 1em;
+    }
+    a:hover {
+      color: $magenta;
     }
   }
 }

@@ -10,8 +10,8 @@
 }
 html,
 body {
-  background: $background;
-  color: $color;
+  background: $white;
+  color: $black;
   font-family: $primary-font;
   line-height: $line-height;
   font-display: fallback;
@@ -23,7 +23,7 @@ img {
 }
 
 a {
-  color: $color;
+  color: $black;
   display: block;
   text-decoration: none;
 }

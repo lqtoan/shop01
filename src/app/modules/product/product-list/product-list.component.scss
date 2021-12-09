@@ -1,5 +1,10 @@
-@import '/src/assets/scss/shared';
+@import "/src/assets/scss/shared";
 
 .product-list {
-  animation: slideToLeft 1000ms  ease-out;
+  .product {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: space-between;
+    animation: slideToLeft 1000ms ease-out;
+  }
 }
