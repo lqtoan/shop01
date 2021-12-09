@@ -1,4 +1,4 @@
-import { IProduct } from './../product';
+import { Product } from './../product';
 import { HttpServerService } from './../../../core/services/httpserver.service';
 import { Component, OnInit } from '@angular/core';
 
@@ -8,7 +8,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  public products: IProduct[];
+  // tslint:disable-next-line: new-parens
+  public products: Product[];
 
   constructor(private httpServerService: HttpServerService) {}
 

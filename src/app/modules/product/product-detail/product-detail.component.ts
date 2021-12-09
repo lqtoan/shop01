@@ -1,5 +1,5 @@
 import { HttpServerService } from 'src/app/core/services/httpserver.service';
-import { IProduct } from './../product';
+import { Product } from './../product';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
@@ -10,19 +10,20 @@ import { switchMap, map } from 'rxjs/operators';
   styleUrls: ['./product-detail.component.scss'],
 })
 export class ProductDetailComponent implements OnInit {
-  public product: IProduct;
+  public product= new Product();
   constructor(
     private activatedRoute: ActivatedRoute,
-    private httpServerService: HttpServerService,
-    private router: Router
+    private httpServerService: HttpServerService
   ) {}
 
   ngOnInit(): void {
-    this.activatedRoute.paramMap
-      .pipe(
-        map((params) => params.get('id')),
-        switchMap((id) => this.httpServerService.getProductById(id))
-      )
-      .subscribe((data) => (this.product = data));
+    this.activatedRoute.paramMap.subscribe((params) => {
+      console.log(params);
+      const id = params.get('id');
+      this.httpServerService
+        .getProductById(id)
+        .subscribe((data) => (this.product = data));
+    });
+    console.log(this.product);
   }
 }
