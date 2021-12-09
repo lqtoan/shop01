@@ -1,3 +1,4 @@
+import { IProduct } from './../../modules/product/product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -15,7 +16,7 @@ export class HttpServerService {
 
   constructor(private httpClient: HttpClient) { }
 
-  public getProducts(): Observable<any> {
+  public getProducts(): Observable<IProduct[]> {
     const url = `${this.PRODUCT_API}`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
