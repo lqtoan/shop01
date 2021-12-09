@@ -1,10 +1,10 @@
-import { IProduct } from './../../modules/product/product';
+import { Product } from './../../modules/product/product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: 'root',
 })
 export class HttpServerService {
   private API = 'http://localhost:3000';
@@ -14,10 +14,14 @@ export class HttpServerService {
     }),
   };
 
-  constructor(private httpClient: HttpClient) { }
+  constructor(private httpClient: HttpClient) {}
 
-  public getProducts(): Observable<IProduct[]> {
+  public getProducts(): Observable<Product[]> {
     const url = `${this.API}/products`;
+    return this.httpClient.get<any>(url, this.httpOptions);
+  }
+  public getProductById(id: string): Observable<Product> {
+    const url = `${this.API}/products/` + id;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 }
