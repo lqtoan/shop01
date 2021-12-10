@@ -1,0 +1,15 @@
+@import "/src/assets/scss/shared";
+
+.product-detail {
+  padding: 1em;
+  border-radius: 0.5em;
+  box-shadow: 0 0 0px 1px $white-secondary;
+  animation: slideToLeft 1000ms ease-out;
+  img {
+    width: 50%;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 0.25em;
+    box-shadow: 0 0 0px 1px $white-secondary;
+  }
+}

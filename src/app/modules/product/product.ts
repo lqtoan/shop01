@@ -3,4 +3,8 @@ export class Product {
   name: string;
   price: number;
   imgUrl: string;
+  constructor(name?, price?) {
+    this.name = name;
+    this.price = price;
+  }
 }

@@ -1,14 +1,15 @@
-
-@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300;400;500;600;700&display=swap");
 
 $black: #2e3440;
-$white: #ECEFF4;
+$white: #eceff4;
+$white-secondary: #d8dee9;
 $magenta: #b48ead;
+$gray: #3b4252;
 
-$primary-font: 'Quicksand', sans-serif;
+$primary-font: "Quicksand", sans-serif;
 $line-height: 150%;
 
-$transition: all 500ms ease;
+$transition: all 250ms ease-out;
 
 $tablet: 1023px; // desktop first
 $mobile: 767px;
