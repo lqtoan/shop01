@@ -8,6 +8,7 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
 import { NotFoundComponent } from './components/not-found/not-found.component';
+import { FooterComponent } from './components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -15,6 +16,7 @@ import { NotFoundComponent } from './components/not-found/not-found.component';
     HeaderComponent,
     AboutComponent,
     NotFoundComponent,
+    FooterComponent,
   ],
   imports: [BrowserModule, ProductModule, AppRoutingModule, HttpClientModule],
   providers: [],

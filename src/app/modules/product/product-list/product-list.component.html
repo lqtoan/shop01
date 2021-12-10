@@ -4,10 +4,17 @@
     class="product"
     *ngFor="let product of products"
   >
-    <img class="product__image" [src]="[product.imgUrl]" alt="image" />
-    <p class="product__name">
-      {{ product.name }}
-    </p>
-    <strong class="product__price">{{ product.price }}</strong>
+    <img
+      class="product__image"
+      [src]="[product.imgUrl + product.id]"
+      alt="image"
+      loading="lazy"
+    />
+    <div class="product__info">
+      <p class="product__info__name">
+        {{ product.name }}
+      </p>
+      <strong class="product__info__price">{{ product.price }}</strong>
+    </div>
   </div>
 </div>

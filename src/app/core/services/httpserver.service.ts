@@ -17,11 +17,11 @@ export class HttpServerService {
   constructor(private httpClient: HttpClient) {}
 
   public getProducts(): Observable<Product[]> {
-    const url = `${this.API}/products`;
+    const url = `${this.API}/product`;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
   public getProductById(id: string): Observable<Product> {
-    const url = `${this.API}/products/` + id;
+    const url = `${this.API}/product/` + id;
     return this.httpClient.get<any>(url, this.httpOptions);
   }
 }

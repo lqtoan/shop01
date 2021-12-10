@@ -26,15 +26,50 @@
       border-radius: 0.25em;
       box-shadow: 0 0 0px 1px $white-secondary;
     }
-    &__name {
+    &__info {
       margin-top: 1em;
-    }
-    &__price {
-      font-size: 125%;
+      &__price {
+        font-size: 150%;
+      }
     }
   }
   .product:hover {
     cursor: pointer;
     box-shadow: 0 0 10px 1px rgba($color: $gray, $alpha: 0.5);
+  }
+}
+@media screen and (max-width: $tablet) {
+  .product-list {
+    .product {
+      width: calc(50% - 1em);
+    }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .product-list {
+    .product {
+      margin: 0.5em;
+      margin-right: 1em;
+      padding: 0;
+      width: calc(100% - 1em);
+      height: 100px;
+      flex-flow: row;
+      &__image {
+        width: 200px;
+        height: 100%;
+        border-radius: unset;
+        border-top-left-radius: 0.5em;
+        border-bottom-left-radius: 0.5em;
+        box-shadow: none;
+      }
+      &__info {
+        margin-top: 0.5em;
+        margin-left: 0.5em;
+      }
+    }
+    .product:hover {
+      cursor: pointer;
+      box-shadow: 0 0 5px 1px rgba($color: $gray, $alpha: 0.25);
+    }
   }
 }
