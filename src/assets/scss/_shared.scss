@@ -10,6 +10,8 @@
 }
 html,
 body {
+  margin: auto;
+  max-width: $max-width-container;
   background: $white;
   color: $black;
   font-family: $primary-font;
@@ -75,12 +77,12 @@ li {
 /* width */
 ::-webkit-scrollbar {
   width: 5px;
-  height: 10px;
   background: #f5f5f5;
   opacity: 0.6;
 }
 ::-webkit-scrollbar-thumb {
   height: initial;
   background: #3b4252;
+  border-radius: 50px;
 }
 

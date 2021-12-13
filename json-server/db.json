@@ -59,6 +59,42 @@
       "name": "Product 10",
       "price": 50,
       "imgUrl": "https://source.unsplash.com/random/"
+    },
+    {
+      "name": "Product 11",
+      "price": "150",
+      "imgUrl": "https://source.unsplash.com/random/",
+      "id": 11
+    },
+    {
+      "name": "Product 12",
+      "price": "180",
+      "imgUrl": "https://source.unsplash.com/random/",
+      "id": 12
+    },
+    {
+      "name": "Product 13",
+      "price": "80",
+      "imgUrl": "https://source.unsplash.com/random/",
+      "id": 13
+    },
+    {
+      "name": "Product 14",
+      "price": "80",
+      "imgUrl": "https://source.unsplash.com/random/",
+      "id": 14
+    },
+    {
+      "name": "Product 15",
+      "price": "80",
+      "imgUrl": "https://source.unsplash.com/random/",
+      "id": 15
+    }
+  ],
+  "category": [
+    {
+      "id": 1,
+      "name": "Category 1"
     }
   ]
 }

@@ -1,5 +1,11 @@
-<div class="product-detail">
-  <img [src]="[product.imgUrl + product.id]" alt="image" />
-  <p>{{ product.name }}</p>
-  <strong>{{ product.price }}</strong>
+<div class="product">
+  <img
+    class="product__image"
+    [src]="[product.imgUrl + product.id]"
+    alt="image"
+  />
+  <div class="product__info">
+    <p class="product__info__name">{{ product.name }}</p>
+    <strong class="product__info__price">{{ product.price }}</strong>
+  </div>
 </div>

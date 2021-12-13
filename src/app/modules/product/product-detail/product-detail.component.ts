@@ -1,4 +1,4 @@
-import { HttpServerService } from 'src/app/core/services/httpserver.service';
+import { ProductService } from './../product.service';
 import { Product } from './../product';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
@@ -9,18 +9,18 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-detail.component.scss'],
 })
 export class ProductDetailComponent implements OnInit {
-  public product = new Product();
+  public product: Product;
   constructor(
     private activatedRoute: ActivatedRoute,
-    private httpServerService: HttpServerService
+    private productService: ProductService
   ) {}
 
   ngOnInit(): void {
     this.activatedRoute.paramMap.subscribe((params) => {
       const id = params.get('id');
-      this.httpServerService
-        .getProductById(id)
-        .subscribe((data) => (this.product = data));
+      this.productService.getProductById(id).subscribe((data) => {
+        return (this.product = data);
+      });
     });
     console.log(this.product);
   }

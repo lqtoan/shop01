@@ -1,5 +1,5 @@
 import { Product } from './../product';
-import { HttpServerService } from './../../../core/services/httpserver.service';
+import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -8,15 +8,13 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  // tslint:disable-next-line: new-parens
   public products: Product[];
 
-  constructor(private httpServerService: HttpServerService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.httpServerService.getProducts().subscribe((data) => {
-      this.products = data;
-      // console.log(this.products);
-    });
+    this.productService
+      .getProducts()
+      .subscribe((data) => (this.products = data));
   }
 }

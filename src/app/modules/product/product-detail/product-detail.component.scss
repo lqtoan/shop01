@@ -1,15 +1,24 @@
 @import "/src/assets/scss/shared";
 
-.product-detail {
+.product {
   padding: 1em;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  align-items: flex-start;
   border-radius: 0.5em;
   box-shadow: 0 0 0px 1px $white-secondary;
-  animation: slideToLeft 1000ms ease-out;
-  img {
+  animation: slideToRight 1000ms linear;
+  &__image {
     width: 50%;
     height: 400px;
     object-fit: cover;
     border-radius: 0.25em;
     box-shadow: 0 0 0px 1px $white-secondary;
+  }
+  &__info {
+    margin-left: 1em;
+    font-size: 200%;
+    line-height: 150%;
   }
 }

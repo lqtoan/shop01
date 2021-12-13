@@ -6,22 +6,23 @@ import { Observable } from 'rxjs';
 @Injectable({
   providedIn: 'root',
 })
-export class HttpServerService {
-  private API = 'http://localhost:3000';
+export class ProductService {
+  constructor(private httpClient: HttpClient) {}
+
+  private PRODUCT_API = 'http://localhost:3000/product';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
     }),
   };
 
-  constructor(private httpClient: HttpClient) {}
-
   public getProducts(): Observable<Product[]> {
-    const url = `${this.API}/product`;
-    return this.httpClient.get<any>(url, this.httpOptions);
+    const params = '_page=1&_limit=8';
+    const url = `${this.PRODUCT_API}?${params}`;
+    return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
   public getProductById(id: string): Observable<Product> {
-    const url = `${this.API}/product/` + id;
-    return this.httpClient.get<any>(url, this.httpOptions);
+    const url = `${this.PRODUCT_API}/` + id;
+    return this.httpClient.get<Product>(url, this.httpOptions);
   }
 }
