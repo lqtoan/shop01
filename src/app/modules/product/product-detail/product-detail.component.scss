@@ -8,10 +8,10 @@
   align-items: flex-start;
   border-radius: 0.5em;
   box-shadow: 0 0 0px 1px $white-secondary;
-  animation: slideToRight 1000ms linear;
+  animation: slideToLeft 1000ms ease-out;
   &__image {
-    width: 50%;
-    height: 400px;
+    width: 25%;
+    height: 200px;
     object-fit: cover;
     border-radius: 0.25em;
     box-shadow: 0 0 0px 1px $white-secondary;

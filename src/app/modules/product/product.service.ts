@@ -9,7 +9,7 @@ import { Observable } from 'rxjs';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  private PRODUCT_API = 'http://localhost:3000/product';
+  private PRODUCT_API = 'https://learn-api-v1.herokuapp.com/api/products';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
@@ -17,10 +17,10 @@ export class ProductService {
   };
 
   public getProducts(): Observable<Product[]> {
-    const params = '_page=1&_limit=8';
-    const url = `${this.PRODUCT_API}?${params}`;
+    const url = `${this.PRODUCT_API}?_limit=8`;
     return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
+
   public getProductById(id: string): Observable<Product> {
     const url = `${this.PRODUCT_API}/` + id;
     return this.httpClient.get<Product>(url, this.httpOptions);
