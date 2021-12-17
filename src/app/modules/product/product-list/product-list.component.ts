@@ -15,13 +15,13 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data) => {
       console.log(data);
-      console.log('Total products: ' + data.pagination._totalRows);
-      console.log('Limit: ' + data.pagination._limit);
-      console.log(
-        'Min of pages: ' +
-          Math.ceil(data.pagination._totalRows / data.pagination._limit)
-      );
-      return (this.products = data.data);
+      // console.log('Total products: ' + data.pagination._totalRows);
+      // console.log('Limit: ' + data.pagination._limit);
+      // console.log(
+      //   'Min of pages: ' +
+      //     Math.ceil(data.pagination._totalRows / data.pagination._limit)
+      // );
+      return (this.products = data);
     });
 
     // this.productService.getProductsByPagination().subscribe((data) => {
