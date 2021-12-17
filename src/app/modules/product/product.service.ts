@@ -1,4 +1,3 @@
-import { Product } from './../../modules/product/product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
@@ -16,13 +15,18 @@ export class ProductService {
     }),
   };
 
-  public getProducts(): Observable<Product[]> {
+  public getProducts(): Observable<any> {
     const url = `${this.PRODUCT_API}?_limit=8`;
-    return this.httpClient.get<Product[]>(url, this.httpOptions);
+    return this.httpClient.get<any>(url, this.httpOptions);
   }
 
-  public getProductById(id: string): Observable<Product> {
+  // public getProductsByPagination(page: string): Observable<any> {
+  //   const url = `${this.PRODUCT_API}?_limit=` + page;
+  //   return this.httpClient.get<any>(url, this.httpOptions);
+  // }
+
+  public getProductById(id: string): Observable<any> {
     const url = `${this.PRODUCT_API}/` + id;
-    return this.httpClient.get<Product>(url, this.httpOptions);
+    return this.httpClient.get<any>(url, this.httpOptions);
   }
 }
