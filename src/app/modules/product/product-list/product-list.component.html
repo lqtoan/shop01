@@ -1,21 +1,23 @@
-<div class="product-list">
-  <h2>Product List</h2>
-  <div
-    [routerLink]="['/product', product.id]"
-    class="product"
-    *ngFor="let product of products"
-  >
-    <img
-      class="product__image"
-      [src]="['https://source.unsplash.com/random/' + product.id]"
-      alt="image"
-      loading="lazy"
-    />
-    <div class="product__info">
-      <p class="product__info__name">
-        {{ product.name }}
-      </p>
-      <strong class="product__info__price">{{ product.price }}</strong>
+<div class="wrapper">
+  <h3>Product List</h3>
+  <div class="product-list">
+    <div
+      [routerLink]="['/product', product.id]"
+      class="product"
+      *ngFor="let product of products"
+    >
+      <img
+        class="product__image"
+        [src]="['https://source.unsplash.com/random/' + product.id]"
+        alt="image"
+        loading="lazy"
+      />
+      <div class="product__info">
+        <p class="product__info__name">
+          {{ product.name }}
+        </p>
+        <strong class="product__info__price">{{ product.price }}</strong>
+      </div>
     </div>
   </div>
 </div>

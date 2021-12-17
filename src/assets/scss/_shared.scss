@@ -1,4 +1,4 @@
-@import '/src/assets/scss/variables';
+@import "/src/assets/scss/variables";
 
 *,
 *::after,
@@ -8,15 +8,34 @@
   box-sizing: border-box;
   user-select: none;
 }
-html,
+html {
+  line-height: $line-height;
+  font-size: $font-size;
+}
 body {
   margin: auto;
   max-width: $max-width-container;
   background: $white;
   color: $black;
   font-family: $primary-font;
-  line-height: $line-height;
   font-display: fallback;
+}
+
+h1 {
+  font-size: 4rem;
+  line-height: 4rem;
+}
+h2 {
+  font-size: 2rem;
+  line-height: 2rem;
+}
+h3 {
+  font-size: 1.5rem;
+  line-height: 1.5rem;
+}
+h4 {
+  font-size: 1.25rem;
+  line-height: 1.25rem;
 }
 
 img {
@@ -85,4 +104,3 @@ li {
   background: #3b4252;
   border-radius: 50px;
 }
-
