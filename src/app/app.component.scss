@@ -1,6 +1,17 @@
-@import '/src/assets/scss/shared';
+@import "/src/assets/scss/shared";
 
 .main {
   min-height: 400px;
   padding: 0.5rem 1rem;
+}
+
+.moveToTop {
+  position: fixed;
+  padding: 1rem;
+  background: $magenta;
+  opacity: 0.5;
+  bottom: 1rem;
+  right: 1rem;
+
+  border-radius: 50%;
 }
