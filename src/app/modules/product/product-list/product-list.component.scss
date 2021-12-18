@@ -13,10 +13,11 @@
       margin-right: 1rem;
       padding: 1rem;
       width: calc(100% / 4 - 1rem);
-      height: 250px;
+      min-height: 300px;
       display: flex;
       flex-flow: column wrap;
       justify-content: flex-start;
+      align-content: stretch;
       border-radius: 0.5rem;
       box-shadow: 0 0 0px 1px $white-secondary;
       transition: $transition;
@@ -29,7 +30,11 @@
       }
       &__info {
         margin-top: 1rem;
+        &__name {
+          min-height: 4rem;
+        }
         &__price {
+          color: red;
           font-size: 150%;
         }
       }
@@ -57,6 +62,7 @@
         margin-right: 1rem;
         padding: 0;
         width: calc(100% - 1rem);
+        min-height: unset;
         height: 100px;
         flex-flow: row;
         animation: slideToRight 750ms ease-out;
@@ -71,6 +77,9 @@
         &__info {
           margin-top: 1rem;
           margin-left: 1rem;
+          &__name {
+            min-height: unset;
+          }
         }
       }
       .product:hover {
