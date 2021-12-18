@@ -9,6 +9,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   public products: Product[];
+  public totalRows: number;
+  public currentPage: number = 1;
 
   constructor(private productService: ProductService) {}
 
@@ -21,6 +23,8 @@ export class ProductListComponent implements OnInit {
       //   'Min of pages: ' +
       //     Math.ceil(data.pagination._totalRows / data.pagination._limit)
       // );
+      this.totalRows = data.length;
+      console.log(this.totalRows);
       return (this.products = data);
     });
 

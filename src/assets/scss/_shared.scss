@@ -52,6 +52,14 @@ li {
   list-style: none;
 }
 
+input {
+  padding: 0.5rem;
+  border: none;
+}
+input:focus {
+  outline: none;
+}
+
 @keyframes slideToRight {
   from {
     transform: translateX(-100%);

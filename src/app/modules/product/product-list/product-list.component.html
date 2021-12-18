@@ -1,10 +1,29 @@
 <div class="wrapper">
-  <h3>Product List</h3>
+  <h3 style="margin: 0.5rem 0">Product List</h3>
+  <p>Total product: {{ totalRows }}</p>
+  <pagination-controls
+    class="pagination"
+    (pageChange)="currentPage = $event"
+    maxSize="7"
+    directionLinks="false"
+    autoHide="true"
+    responsive="false"
+    previousLabel="<"
+    nextLabel=">"
+  ></pagination-controls>
   <div class="product-list">
     <div
       [routerLink]="['/product', product.id]"
       class="product"
-      *ngFor="let product of products"
+      *ngFor="
+        let product of products
+          | paginate
+            : {
+                itemsPerPage: 8,
+                currentPage: currentPage,
+                totalItems: totalRows
+              }
+      "
     >
       <img
         class="product__image"
@@ -20,4 +39,14 @@
       </div>
     </div>
   </div>
+  <pagination-controls
+    class="pagination"
+    (pageChange)="currentPage = $event"
+    maxSize="7"
+    directionLinks="false"
+    autoHide="true"
+    responsive="false"
+    previousLabel="<"
+    nextLabel=">"
+  ></pagination-controls>
 </div>
