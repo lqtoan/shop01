@@ -6,12 +6,14 @@ import { ProductComponent } from './product.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
 import { ProductRoutingModule } from './product-routing.module';
 import { ProductListComponent } from './product-list/product-list.component';
+import { CategoryComponent } from './category/category.component';
 
 @NgModule({
   declarations: [
     ProductListComponent,
     ProductDetailComponent,
     ProductComponent,
+    CategoryComponent,
   ],
   imports: [CommonModule, ProductRoutingModule, NgxPaginationModule],
 })

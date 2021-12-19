@@ -1,6 +1,7 @@
-import { Product } from './../product';
+import { Product } from '../../../models/product';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
+// import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-product-list',
@@ -9,28 +10,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   public products: Product[];
+  // public categories: Category[];
   public totalRows: number;
-  public currentPage: number = 1;
+  public currentPage = 1;
 
   constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data) => {
-      console.log(data);
-      // console.log('Total products: ' + data.pagination._totalRows);
-      // console.log('Limit: ' + data.pagination._limit);
-      // console.log(
-      //   'Min of pages: ' +
-      //     Math.ceil(data.pagination._totalRows / data.pagination._limit)
-      // );
+      // console.log(data);
       this.totalRows = data.length;
       console.log(this.totalRows);
       return (this.products = data);
     });
-
-    // this.productService.getProductsByPagination().subscribe((data) => {
-    //   console.log(data);
-    //   return this.products = data.data;
-    // });
   }
 }
