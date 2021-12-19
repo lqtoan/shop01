@@ -1,16 +1,17 @@
 <div class="wrapper">
   <app-category></app-category>
-  <pagination-controls
-    class="pagination"
-    (pageChange)="currentPage = $event"
-    maxSize="7"
-    directionLinks="false"
-    autoHide="true"
-    responsive="false"
-    previousLabel="<"
-    nextLabel=">"
-  ></pagination-controls>
-  <small>Total product: {{ totalRows }}</small>
+  <div class="pagination pagination--top">
+    <small>Total product: {{ totalRows }}</small>
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+      maxSize="7"
+      directionLinks="false"
+      autoHide="true"
+      responsive="false"
+      previousLabel="<"
+      nextLabel=">"
+    ></pagination-controls>
+  </div>
   <div class="product-list">
     <div
       [routerLink]="['/product', product.id]"
@@ -39,14 +40,16 @@
       </div>
     </div>
   </div>
-  <pagination-controls
-    class="pagination"
-    (pageChange)="currentPage = $event"
-    maxSize="7"
-    directionLinks="false"
-    autoHide="true"
-    responsive="false"
-    previousLabel="<"
-    nextLabel=">"
-  ></pagination-controls>
+  <div class="pagination pagination--bottom">
+    <small>Total product: {{ totalRows }}</small>
+    <pagination-controls
+      (pageChange)="currentPage = $event"
+      maxSize="7"
+      directionLinks="false"
+      autoHide="true"
+      responsive="false"
+      previousLabel="<"
+      nextLabel=">"
+    ></pagination-controls>
+  </div>
 </div>

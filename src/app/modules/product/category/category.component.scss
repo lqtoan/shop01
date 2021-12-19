@@ -3,11 +3,10 @@
 .category {
   background: $black;
   color: $white;
-  margin-bottom: 1rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  animation: slideToRight 1000ms ease-in;
+  animation: slideToRight 1000ms ease-out 2000ms backwards;
   &__item {
     padding: 0.5rem;
     width: 10%;

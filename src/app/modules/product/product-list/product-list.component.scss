@@ -1,14 +1,27 @@
 @import "/src/assets/scss/shared";
 
 .wrapper {
-  animation: slideToRight 1000ms ease-in;
   .pagination {
-    text-align: center;
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+    justify-content: space-between;
+    animation: slideToLeft 1000ms ease-out 500ms backwards;
+    ::ng-deep .ngx-pagination {
+      margin: 0.5rem;
+      animation: slideToLeft 1000ms ease-out 1500ms backwards;
+    }
+    &--bottom {
+      small {
+        opacity: 0;
+      }
+    }
   }
   .product-list {
     margin-right: -1rem;
     display: flex;
     flex-flow: row wrap;
+    animation: slideToRight 1000ms ease-out 5000ms backwards;
     .product {
       background: $white;
       color: $black;
@@ -61,7 +74,23 @@
 }
 @media screen and (max-width: $mobile) {
   .wrapper {
+    .pagination {
+      line-height: 100%;
+      flex-flow: row-reverse wrap;
+      animation: slideToRight 1000ms ease-out 500ms backwards;
+      ::ng-deep {
+        .ngx-pagination {
+          margin: 0.5rem 0;
+          animation: slideToRight 1000ms ease-out 0ms backwards;
+          transition: $transition;
+          .current {
+            background: $magenta;
+          }
+        }
+      }
+    }
     .product-list {
+      animation: slideToLeft 1000ms ease-out 5000ms backwards;
       .product {
         margin: 0.5rem 0;
         margin-right: 1rem;
@@ -70,7 +99,6 @@
         min-height: unset;
         height: 100px;
         flex-flow: row;
-        animation: slideToRight 750ms ease-out;
         &__image {
           width: 160px;
           min-width: 160px;
