@@ -76,7 +76,7 @@
   .wrapper {
     .pagination {
       line-height: 100%;
-      flex-flow: row-reverse wrap;
+      flex-flow: row wrap;
       animation: slideToRight 1000ms ease-out 500ms backwards;
       ::ng-deep {
         .ngx-pagination {
