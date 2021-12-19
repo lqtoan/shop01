@@ -6,7 +6,7 @@
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
-  animation: slideToRight 1500ms ease-out 2000ms backwards;
+  animation: slideToRight 1500ms ease-out 500ms backwards;
   &__item {
     padding: 0.5rem;
     width: 10%;
