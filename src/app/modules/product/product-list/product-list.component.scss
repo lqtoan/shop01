@@ -13,6 +13,7 @@
     }
     &--bottom {
       small {
+        display: block;
         opacity: 0;
       }
     }
@@ -87,6 +88,9 @@
             background: $magenta;
           }
         }
+      }
+      &--bottom {
+        animation: slideToRight 1000ms ease-out 5000ms backwards;
       }
     }
     .product-list {
