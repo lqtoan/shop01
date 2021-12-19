@@ -12,28 +12,21 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 0px 1px $white-secondary;
     &__image {
-      width: 50%;
-      height: 320px;
+      width: 50vw;
+      height: 25vw;
       object-fit: cover;
       border-radius: 0.25rem;
       box-shadow: 0 0 0px 1px $white-secondary;
     }
     &__info {
       margin-top: -1.5rem;
+      &__price {
+        color: red;
+      }
     }
     &__info * {
       margin: 1.5rem 0;
       margin-left: 1.5rem;
-    }
-  }
-}
-@media screen and (max-width: $tablet) {
-  .wrapper {
-    .product {
-      &__image {
-        width: 75%;
-        height: 75%;
-      }
     }
   }
 }
@@ -44,14 +37,15 @@
       justify-content: center;
       &__image {
         width: 100%;
-        height: 50%;
+        height: 25vw;
       }
       &__info {
+        text-align: center;
         margin-top: 0;
       }
       &__info * {
+        font-size: 100%;
         margin: 0.5rem 0;
-        margin-left: 0;
       }
     }
   }

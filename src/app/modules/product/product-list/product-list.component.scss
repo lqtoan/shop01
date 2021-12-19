@@ -39,6 +39,7 @@
         }
         &__price {
           color: red;
+          min-width: max-content;
           font-size: 150%;
         }
       }
