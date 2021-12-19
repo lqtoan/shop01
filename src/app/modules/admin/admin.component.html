@@ -1,8 +1,35 @@
-<p>admin works!</p>
+<p>Product List</p>
 <table>
-  <tr *ngFor="let product of products">
+  <tr>
+    <td>Name</td>
+    <td>Price</td>
+  </tr>
+  <tr
+    *ngFor="
+      let product of products
+        | paginate
+          : {
+              itemsPerPage: 8,
+              currentPage: currentPage,
+              totalItems: totalRows
+            }
+    "
+  >
     <td>
       {{ product.name }}
     </td>
+    <td>
+      {{ product.price }}
+    </td>
   </tr>
 </table>
+<small>Total product: {{ totalRows }}</small>
+<pagination-controls
+  (pageChange)="currentPage = $event"
+  maxSize="6"
+  directionLinks="false"
+  autoHide="true"
+  responsive="false"
+  previousLabel="<"
+  nextLabel=">"
+></pagination-controls>
