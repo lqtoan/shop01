@@ -1,7 +1,7 @@
-import { Product } from '../../models/product';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
+import { Product } from './product';
 import { Category } from 'src/app/models/category';
 
 @Injectable({
@@ -10,8 +10,8 @@ import { Category } from 'src/app/models/category';
 export class ProductService {
   constructor(private httpClient: HttpClient) {}
 
-  private PRODUCT_API = 'https://learn-api-v1.herokuapp.com/api/products';
-  private CATEGORY_API = 'https://learn-api-v1.herokuapp.com/api/products';
+  private PRODUCT_API = 'https://learn-api-v1.herokuapp.com/api/products/';
+  private CATEGORY_API = 'https://learn-api-v1.herokuapp.com/api/categories/';
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',
@@ -24,7 +24,7 @@ export class ProductService {
   }
 
   public getCategories(): Observable<Category[]> {
-    const url = `${this.PRODUCT_API}`;
+    const url = `${this.CATEGORY_API}`;
     return this.httpClient.get<Category[]>(url, this.httpOptions);
   }
 

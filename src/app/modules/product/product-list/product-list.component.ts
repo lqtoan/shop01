@@ -1,7 +1,6 @@
-import { Product } from '../../../models/product';
+import { Product } from '../product';
 import { ProductService } from './../product.service';
 import { Component, OnInit } from '@angular/core';
-// import { Category } from 'src/app/models/category';
 
 @Component({
   selector: 'app-product-list',
@@ -10,7 +9,6 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ProductListComponent implements OnInit {
   public products: Product[];
-  // public categories: Category[];
   public totalRows: number;
   public currentPage = 1;
 
@@ -18,7 +16,6 @@ export class ProductListComponent implements OnInit {
 
   ngOnInit(): void {
     this.productService.getProducts().subscribe((data) => {
-      // console.log(data);
       this.totalRows = data.length;
       console.log(this.totalRows);
       return (this.products = data);

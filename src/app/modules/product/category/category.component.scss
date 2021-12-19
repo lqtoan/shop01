@@ -1,0 +1,21 @@
+@import "/src/assets/scss/shared";
+
+.category {
+  background: $black;
+  color: $white;
+  margin-bottom: 1rem;
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: flex-start;
+  animation: slideToRight 1000ms ease-in;
+  &__item {
+    padding: 0.5rem;
+    width: 10%;
+    text-align: center;
+  }
+}
+@media screen and (max-width: $mobile) {
+  .category {
+    display: none;
+  }
+}

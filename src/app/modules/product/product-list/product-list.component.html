@@ -1,6 +1,5 @@
 <div class="wrapper">
-  <h3 style="margin: 0.5rem 0">Product List</h3>
-  <p>Total product: {{ totalRows }}</p>
+  <app-category></app-category>
   <pagination-controls
     class="pagination"
     (pageChange)="currentPage = $event"
@@ -11,7 +10,7 @@
     previousLabel="<"
     nextLabel=">"
   ></pagination-controls>
-
+  <small>Total product: {{ totalRows }}</small>
   <div class="product-list">
     <div
       [routerLink]="['/product', product.id]"
