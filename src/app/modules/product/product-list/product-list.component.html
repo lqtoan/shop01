@@ -3,13 +3,13 @@
   <div class="pagination pagination--top">
     <small>Total product: {{ totalRows }}</small>
     <pagination-controls
-    (pageChange)="currentPage = $event"
-    maxSize="7"
-    directionLinks="false"
-    autoHide="true"
-    responsive="false"
-    previousLabel="<"
-    nextLabel=">"
+      (pageChange)="currentPage = $event"
+      maxSize="6"
+      directionLinks="false"
+      autoHide="true"
+      responsive="false"
+      previousLabel="<"
+      nextLabel=">"
     ></pagination-controls>
   </div>
   <div class="product-list">
@@ -36,7 +36,9 @@
         <p class="product__info__name">
           {{ product.name }}
         </p>
-        <strong class="product__info__price">{{ product.price }}</strong>
+        <strong class="product__info__price">{{
+          product.price | formatPrice
+        }}</strong>
       </div>
     </div>
   </div>
@@ -44,7 +46,7 @@
     <small>Total product: {{ totalRows }}</small>
     <pagination-controls
       (pageChange)="currentPage = $event"
-      maxSize="7"
+      maxSize="6"
       directionLinks="false"
       autoHide="true"
       responsive="false"

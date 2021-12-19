@@ -8,6 +8,7 @@ import { ProductDetailComponent } from './product-detail/product-detail.componen
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product.component';
 import { CommonModule } from '@angular/common';
+import { PipesModule } from 'src/app/core/pipes/pipes.module';
 
 @NgModule({
   declarations: [
@@ -21,6 +22,7 @@ import { CommonModule } from '@angular/common';
     CommonModule,
     ProductRoutingModule,
     NgxPaginationModule,
+    PipesModule,
   ],
 })
 export class ProductModule {}

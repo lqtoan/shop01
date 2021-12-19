@@ -21,7 +21,7 @@
     &__info {
       margin-top: -1.5rem;
       &__price {
-        color: red;
+        color: $red;
       }
     }
     &__info * {
@@ -37,7 +37,7 @@
       justify-content: center;
       &__image {
         width: 100%;
-        height: 25vw;
+        height: 50vw;
       }
       &__info {
         text-align: center;
