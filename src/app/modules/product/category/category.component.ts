@@ -15,9 +15,7 @@ export class CategoryComponent implements OnInit {
   public totalRows: number;
 
   constructor(
-    private httpService: HttpService,
-    private activatedRoute: ActivatedRoute
-  ) {}
+    private httpService: HttpService  ) {}
 
   ngOnInit(): void {
     this.httpService.getCategories().subscribe((data) => {
@@ -26,13 +24,5 @@ export class CategoryComponent implements OnInit {
       console.log('Categories: ' + this.totalRows);
       return (this.categories = data);
     });
-
-    // this.activatedRoute.paramMap.subscribe((params) => {
-    //   const categoryId = params.get('categoryId');
-    //   this.productService.getProductsByCategory(categoryId).subscribe((data) => {
-    //     return (this.products = data);
-    //   });
-    // });
-    // console.log(this.products);
   }
 }

@@ -42,7 +42,7 @@
       border-radius: 0.5rem;
       box-shadow: 0 0 0px 1px $white-secondary;
       transition: $transition;
-      animation: slideToRight 1000ms ease-out;
+      animation: slideToLeft 1000ms ease-out;
       &__image {
         width: 100%;
         height: 12.5vw;

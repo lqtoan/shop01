@@ -51,5 +51,8 @@ export class ProductListComponent implements OnInit {
           .match(this.name.toLocaleLowerCase());
       });
     }
+    if (this.products.length === 0) {
+      alert('No products');
+    }
   }
 }
