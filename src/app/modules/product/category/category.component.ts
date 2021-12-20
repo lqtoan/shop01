@@ -1,6 +1,8 @@
 import { Category } from './../../../models/category';
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../product.service';
+import { ActivatedRoute } from '@angular/router';
+import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-category',
@@ -9,9 +11,10 @@ import { ProductService } from '../product.service';
 })
 export class CategoryComponent implements OnInit {
   public categories: Category[];
+  public products: Product[];
   public totalRows: number;
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
     this.productService.getCategories().subscribe((data) => {
@@ -20,6 +23,14 @@ export class CategoryComponent implements OnInit {
       console.log(this.totalRows);
       return (this.categories = data);
     });
-  }
 
+    // this.activatedRoute.paramMap.subscribe((params) => {
+    //   const categoryId = params.get('categoryId');
+    //   this.productService.getProductsByCategory(categoryId).subscribe((data) => {
+    //     return (this.products = data);
+    //   });
+    // });
+    // console.log(this.products);
+  }
+  
 }

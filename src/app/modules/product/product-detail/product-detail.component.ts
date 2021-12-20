@@ -9,7 +9,7 @@ import { ActivatedRoute, Router } from '@angular/router';
   styleUrls: ['./product-detail.component.scss'],
 })
 export class ProductDetailComponent implements OnInit {
-  public product: Product;
+  public product = new Product();
   constructor(
     private activatedRoute: ActivatedRoute,
     private productService: ProductService

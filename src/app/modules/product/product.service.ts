@@ -19,12 +19,17 @@ export class ProductService {
   };
 
   public getProducts(): Observable<Product[]> {
-    const url = `${this.PRODUCT_API}`;
+    const url = `${this.PRODUCT_API}?_expand=category`;
+    return this.httpClient.get<Product[]>(url, this.httpOptions);
+  }
+
+  public getProductsByCategory(categoryId: String): Observable<Product[]> {
+    const url = `${this.PRODUCT_API}?_expand=category&categoryId_like=` + categoryId;
     return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
 
   public getCategories(): Observable<Category[]> {
-    const url = `${this.CATEGORY_API}`;
+    const url = `${this.CATEGORY_API}?_embed=products`;
     return this.httpClient.get<Category[]>(url, this.httpOptions);
   }
 

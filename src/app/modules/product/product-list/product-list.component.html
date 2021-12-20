@@ -36,6 +36,9 @@
         <p class="product__info__name">
           {{ product.name }}
         </p>
+        <small class="product__info__category">
+          Category: {{ product.category.name }}
+        </small>
         <strong class="product__info__price">{{
           product.price | formatPrice
         }}</strong>

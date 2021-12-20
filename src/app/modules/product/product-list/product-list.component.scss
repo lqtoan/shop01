@@ -62,6 +62,9 @@
           min-width: max-content;
           font-size: 150%;
         }
+        &__category {
+          display: block;
+        }
       }
     }
     .product:hover {
@@ -123,6 +126,9 @@
           }
           &__price {
             font-size: 125%;
+          }
+          &__category {
+            display: none;
           }
         }
       }
