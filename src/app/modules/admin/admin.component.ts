@@ -11,6 +11,7 @@ export class AdminComponent implements OnInit {
   public products: Product[];
   public totalRows: number;
   public currentPage = 1;
+  name: any;
 
   constructor(private httpService: HttpService) {}
 

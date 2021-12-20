@@ -1,4 +1,16 @@
 <div class="wrapper">
+  <form action="">
+    <input
+      style="width: 100%; margin: 0.5rem 0"
+      class="form-control"
+      type="search"
+      name="search"
+      [(ngModel)]="name"
+      autocomplete="off"
+      placeholder="Start searching for a product by name"
+    />
+    <input style="display: none" type="submit" (click)="search()" value="ok" />
+  </form>
   <div class="pagination">
     <small>Total product: {{ totalRows }}</small>
     <pagination-controls

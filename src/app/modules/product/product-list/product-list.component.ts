@@ -12,6 +12,7 @@ export class ProductListComponent implements OnInit {
   public products: Product[] = [];
   public totalRows: number;
   public currentPage = 1;
+  public name: string;
 
   constructor(
     private httpService: HttpService,
@@ -40,6 +41,15 @@ export class ProductListComponent implements OnInit {
       }
     });
   }
-
-  ngOnDestroy() {}
+  search(): void {
+    if (this.name === '') {
+      this.ngOnInit();
+    } else {
+      this.products = this.products.filter((res) => {
+        return res.name
+          .toLocaleLowerCase()
+          .match(this.name.toLocaleLowerCase());
+      });
+    }
+  }
 }

@@ -6,8 +6,8 @@ import { HttpService } from '../core/services/http.service';
 
 @NgModule({
   declarations: [],
-  exports: [],
   imports: [CommonModule, RouterModule],
+  exports: [],
 })
 export class ShareModule {
   static forRoot(): ModuleWithProviders {

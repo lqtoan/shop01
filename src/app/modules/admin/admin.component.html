@@ -1,28 +1,12 @@
 <p>Product List</p>
-<table>
-  <tr>
-    <td>Name</td>
-    <td>Price</td>
-  </tr>
-  <tr
-    *ngFor="
-      let product of products
-        | paginate
-          : {
-              itemsPerPage: 8,
-              currentPage: currentPage,
-              totalItems: totalRows
-            }
-    "
-  >
-    <td>
-      {{ product.name }}
-    </td>
-    <td>
-      {{ product.price }}
-    </td>
-  </tr>
-</table>
+<input
+  class="form-control"
+  type="text"
+  name="search"
+  [(ngModel)]="name"
+  autocomplete="off"
+  placeholder="&#61442;  Start searching for a hero by id or name or country"
+/>
 <small>Total product: {{ totalRows }}</small>
 <pagination-controls
   (pageChange)="currentPage = $event"
@@ -33,3 +17,28 @@
   previousLabel="<"
   nextLabel=">"
 ></pagination-controls>
+<table>
+  <tr>
+    <td>Name</td>
+    <td>Price</td>
+  </tr>
+  <tr
+    *ngFor="
+      let product of products
+        | paginate
+          : {
+              itemsPerPage: 1024,
+              currentPage: currentPage,
+              totalItems: totalRows
+            }
+        | filter: name
+    "
+  >
+    <td>
+      {{ product.name }}
+    </td>
+    <td>
+      {{ product.price }}
+    </td>
+  </tr>
+</table>
