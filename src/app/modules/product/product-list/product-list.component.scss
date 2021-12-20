@@ -9,7 +9,7 @@
     justify-content: space-between;
     animation: slideToLeft 1000ms ease-out;
     ::ng-deep .ngx-pagination {
-      margin: 0;
+      margin: 0 !important;
       animation: slideToLeft 1000ms ease-out 500ms backwards;
       li {
         padding: 0 0.5rem;

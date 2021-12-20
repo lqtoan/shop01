@@ -14,8 +14,8 @@
   }
   &__item {
     cursor: pointer;
-    margin: 0 0.25rem;
-    padding: 0.25rem 0.5rem;
+    margin: 2px 0.25rem;
+    padding: 0 0.25rem;
     min-width: max-content;
     border-radius: 0.25rem;
     transition: $transition;
@@ -27,7 +27,7 @@
 @media screen and (max-width: $mobile) {
   .category {
     // display: none;
-    font-size: smaller;
+    // font-size: smaller;
     &__item {
       width: max-content;
     }
