@@ -1,5 +1,5 @@
 import { Product } from '../../../models/product';
-import { ProductService } from './../product.service';
+import { HttpService } from '../../../core/services/http.service';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 
@@ -14,7 +14,7 @@ export class ProductListComponent implements OnInit {
   public currentPage = 1;
 
   constructor(
-    private productService: ProductService,
+    private httpService: HttpService,
     private activatedRoute: ActivatedRoute
   ) {}
 
@@ -23,22 +23,20 @@ export class ProductListComponent implements OnInit {
     this.activatedRoute.paramMap.subscribe((params) => {
       const categoryId = params.get('categoryId');
       if (categoryId === null) {
-        this.productService.getProducts().subscribe((data) => {
+        this.httpService.getProducts().subscribe((data) => {
           console.log(data);
           this.totalRows = data.length;
           console.log('Products: ' + this.totalRows);
           return (this.products = data);
         });
       } else {
-        this.productService
-          .getProductsByCategory(categoryId)
-          .subscribe((data) => {
-            console.log(data);
-            this.totalRows = data.length;
-            console.log('Products: ' + this.totalRows);
-            this.totalRows = data.length;
-            return (this.products = data);
-          });
+        this.httpService.getProductsByCategory(categoryId).subscribe((data) => {
+          console.log(data);
+          this.totalRows = data.length;
+          console.log('Products: ' + this.totalRows);
+          this.totalRows = data.length;
+          return (this.products = data);
+        });
       }
     });
   }

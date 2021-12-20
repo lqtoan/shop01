@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { ProductService } from '../product/product.service';
+import { HttpService } from '../../core/services/http.service';
 
 @Component({
   selector: 'app-admin',
@@ -12,10 +12,10 @@ export class AdminComponent implements OnInit {
   public totalRows: number;
   public currentPage = 1;
 
-  constructor(private productService: ProductService) {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
-    this.productService.getProducts().subscribe((data) => {
+    this.httpService.getProducts().subscribe((data) => {
       this.totalRows = data.length;
       console.log(this.totalRows);
       return (this.products = data);

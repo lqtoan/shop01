@@ -1,23 +1,26 @@
 import { Category } from './../../../models/category';
 import { Component, OnInit } from '@angular/core';
-import { ProductService } from '../product.service';
+import { HttpService } from '../../../core/services/http.service';
 import { ActivatedRoute } from '@angular/router';
 import { Product } from 'src/app/models/product';
 
 @Component({
   selector: 'app-category',
   templateUrl: './category.component.html',
-  styleUrls: ['./category.component.scss']
+  styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
   public categories: Category[];
   public products: Product[];
   public totalRows: number;
 
-  constructor(private productService: ProductService, private activatedRoute: ActivatedRoute) { }
+  constructor(
+    private httpService: HttpService,
+    private activatedRoute: ActivatedRoute
+  ) {}
 
   ngOnInit(): void {
-    this.productService.getCategories().subscribe((data) => {
+    this.httpService.getCategories().subscribe((data) => {
       console.log(data);
       this.totalRows = data.length;
       console.log('Categories: ' + this.totalRows);
@@ -32,5 +35,4 @@ export class CategoryComponent implements OnInit {
     // });
     // console.log(this.products);
   }
-  
 }

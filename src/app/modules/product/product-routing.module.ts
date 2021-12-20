@@ -3,6 +3,7 @@ import { Routes, RouterModule } from '@angular/router';
 import { ProductComponent } from './product.component';
 import { ProductListComponent } from './product-list/product-list.component';
 import { ProductDetailComponent } from './product-detail/product-detail.component';
+import { NotFoundComponent } from 'src/app/components/not-found/not-found.component';
 
 const productRoutes: Routes = [
   {
@@ -16,10 +17,6 @@ const productRoutes: Routes = [
       {
         path: ':categoryId',
         component: ProductListComponent,
-      },
-      {
-        path: ':id',
-        component: ProductDetailComponent,
       },
     ],
   },

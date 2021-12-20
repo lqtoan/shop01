@@ -7,7 +7,7 @@ import { Category } from 'src/app/models/category';
 @Injectable({
   providedIn: 'root',
 })
-export class ProductService {
+export class HttpService {
   constructor(private httpClient: HttpClient) {}
 
   private PRODUCT_API = 'https://learn-api-v1.herokuapp.com/api/products/';
