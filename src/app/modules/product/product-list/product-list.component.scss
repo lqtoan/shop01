@@ -13,8 +13,8 @@
       animation: slideToLeft 1000ms ease-out 500ms backwards;
       li {
         padding: 0 0.5rem;
-        span {
-          font-size: 0.75rem;
+        a {
+          padding: 0;
         }
       }
       .current {

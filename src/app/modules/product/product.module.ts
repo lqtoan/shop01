@@ -15,14 +15,11 @@ import { PipesModule } from 'src/app/core/pipes/pipes.module';
     ProductListComponent,
     ProductDetailComponent,
     ProductComponent,
-    CategoryComponent
+    CategoryComponent,
   ],
   imports: [
     ShareModule,
-    CommonModule,
     ProductRoutingModule,
-    NgxPaginationModule,
-    PipesModule,
   ],
 })
 export class ProductModule {}
