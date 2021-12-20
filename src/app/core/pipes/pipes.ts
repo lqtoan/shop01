@@ -6,6 +6,6 @@ export class FormatPricePipe implements PipeTransform {
     if (!value) { return '0'; }
     value = value.toString().replace(/[\,]+/g, '');
     value = value.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
-    return value.concat(' VND');
+    return value.concat(' ₫');
   }
 }

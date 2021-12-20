@@ -20,7 +20,7 @@ export class CategoryComponent implements OnInit {
     this.productService.getCategories().subscribe((data) => {
       console.log(data);
       this.totalRows = data.length;
-      console.log(this.totalRows);
+      console.log('Categories: ' + this.totalRows);
       return (this.categories = data);
     });
 

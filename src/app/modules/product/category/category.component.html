@@ -1,6 +1,15 @@
 <nav class="category">
   <li
+    [routerLink]="['/product']"
+    routerLinkActive="selected"
+    [routerLinkActiveOptions]="{ exact: true }"
+    class="category__item"
+  >
+    All
+  </li>
+  <li
     [routerLink]="['/product', category.id]"
+    routerLinkActive="selected"
     class="category__item"
     *ngFor="let category of categories"
   >

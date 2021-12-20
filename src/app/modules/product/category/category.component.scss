@@ -1,20 +1,36 @@
 @import "/src/assets/scss/shared";
 
 .category {
-  background: $black;
-  color: $white;
+  // background: $black;
+  // color: $white;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
+  border-bottom: 1px solid $black;
   animation: slideToRight 1500ms ease-out 500ms backwards;
+  .selected {
+    font-weight: bold;
+    color: $white;
+    background: $magenta;
+    opacity: 0.8;
+  }
   &__item {
-    padding: 0.5rem;
-    width: 10%;
-    text-align: center;
+    cursor: pointer;
+    margin: 0 0.25rem;
+    padding: 0.25rem;
+    min-width: max-content;
+    // text-align: center;
+    transition: $transition;
+  }
+  &__item:hover {
+    color:$magenta;
   }
 }
 @media screen and (max-width: $mobile) {
   .category {
-    display: none;
+    // display: none;
+    &__item {
+      width: max-content;
+    }
   }
 }

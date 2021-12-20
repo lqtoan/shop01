@@ -19,21 +19,29 @@ export class ProductListComponent implements OnInit {
   ) {}
 
   ngOnInit(): void {
-    // this.productService.getProducts().subscribe((data) => {
-    //   console.log(data);
-    //   this.totalRows = data.length;
-    //   console.log(this.totalRows);
-    //   return (this.products = data);
-    // });
-
+    // Get products by categoryId or get ALL if categoryId null
     this.activatedRoute.paramMap.subscribe((params) => {
       const categoryId = params.get('categoryId');
-      this.productService
-        .getProductsByCategory(categoryId)
-        .subscribe((data) => {
+      if (categoryId === null) {
+        this.productService.getProducts().subscribe((data) => {
+          console.log(data);
+          this.totalRows = data.length;
+          console.log('Products: ' + this.totalRows);
           return (this.products = data);
         });
+      } else {
+        this.productService
+          .getProductsByCategory(categoryId)
+          .subscribe((data) => {
+            console.log(data);
+            this.totalRows = data.length;
+            console.log('Products: ' + this.totalRows);
+            this.totalRows = data.length;
+            return (this.products = data);
+          });
+      }
     });
-    console.log(this.products);
   }
+
+  ngOnDestroy() {}
 }
