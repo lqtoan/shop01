@@ -9,7 +9,13 @@ import { PipesModule } from 'src/app/core/pipes/pipes.module';
 import { AdminComponent } from './admin.component';
 
 @NgModule({
-  declarations: [],
-  imports: [ShareModule, CommonModule, AdminRoutingModule, NgxPaginationModule, PipesModule],
+  declarations: [AdminComponent],
+  imports: [
+    ShareModule,
+    CommonModule,
+    AdminRoutingModule,
+    NgxPaginationModule,
+    PipesModule,
+  ],
 })
 export class AdminModule {}

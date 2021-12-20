@@ -6,6 +6,12 @@ const productRoutes: Routes = [
   {
     path: '',
     component: AdminComponent,
+    children: [
+      {
+        path: '',
+        component: AdminComponent,
+      },
+    ],
   },
 ];
 

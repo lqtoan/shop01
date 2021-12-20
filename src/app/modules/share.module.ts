@@ -5,9 +5,7 @@ import { RouterModule } from '@angular/router';
 import { AdminComponent } from './admin/admin.component';
 
 @NgModule({
-  declarations: [
-    AdminComponent
-  ],
+  declarations: [],
   exports: [],
   imports: [CommonModule, RouterModule, NgxPaginationModule],
 })
