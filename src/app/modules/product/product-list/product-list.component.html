@@ -1,5 +1,5 @@
 <div class="wrapper">
-  <div class="pagination pagination--top">
+  <div class="pagination">
     <small>Total product: {{ totalRows }}</small>
     <pagination-controls
       (pageChange)="currentPage = $event"
@@ -43,17 +43,5 @@
         }}</strong>
       </div>
     </div>
-  </div>
-  <div class="pagination pagination--bottom">
-    <small>Total product: {{ totalRows }}</small>
-    <pagination-controls
-      (pageChange)="currentPage = $event"
-      maxSize="6"
-      directionLinks="false"
-      autoHide="true"
-      responsive="false"
-      previousLabel="<"
-      nextLabel=">"
-    ></pagination-controls>
   </div>
 </div>

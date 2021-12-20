@@ -1,8 +1,6 @@
 @import "/src/assets/scss/shared";
 
 .category {
-  // background: $black;
-  // color: $white;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -19,16 +17,17 @@
     margin: 0 0.25rem;
     padding: 0.25rem;
     min-width: max-content;
-    // text-align: center;
+    border-radius: 0.25rem;
     transition: $transition;
   }
   &__item:hover {
-    color:$magenta;
+    color: $magenta;
   }
 }
 @media screen and (max-width: $mobile) {
   .category {
     // display: none;
+    font-size: smaller;
     &__item {
       width: max-content;
     }

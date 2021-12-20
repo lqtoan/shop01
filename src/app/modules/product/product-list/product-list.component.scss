@@ -2,26 +2,24 @@
 
 .wrapper {
   .pagination {
-    height: 2.5rem;
-    line-height: 75%;
+    margin: 0.5rem 0;
     display: flex;
     flex-flow: row;
     align-items: center;
     justify-content: space-between;
     animation: slideToLeft 1000ms ease-out;
     ::ng-deep .ngx-pagination {
-      margin: 0.5rem;
+      margin: 0;
       animation: slideToLeft 1000ms ease-out 500ms backwards;
+      li {
+        padding: 0 0.5rem;
+        span {
+          font-size: 0.75rem;
+        }
+      }
       .current {
-        padding: 0.5rem;
         background: $magenta;
         border-radius: 0.25rem;
-      }
-    }
-    &--bottom {
-      small {
-        display: block;
-        opacity: 0;
       }
     }
   }
@@ -95,9 +93,6 @@
           animation: slideToRight 1000ms ease-out;
           transition: $transition;
         }
-      }
-      &--bottom {
-        animation: slideToRight 1000ms ease-out 5000ms backwards;
       }
     }
     .product-list {
