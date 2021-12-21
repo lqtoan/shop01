@@ -38,6 +38,11 @@ export class ProductListComponent implements OnInit {
           this.totalRows = data.length;
           return (this.products = data);
         });
+        // Solution 2:
+        // this.httpService.getCategoryDetails(categoryId).subscribe((data) => {
+        //   console.log(data.products);
+        // return (this.products = data.products);
+        // });
       }
     });
   }

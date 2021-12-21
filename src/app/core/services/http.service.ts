@@ -17,21 +17,29 @@ export class HttpService {
       'Content-type': 'application/json',
     }),
   };
+  // ?_embed=products
+  public getCategories(): Observable<Category[]> {
+    const url = `${this.CATEGORY_API}`;
+    return this.httpClient.get<Category[]>(url, this.httpOptions);
+  }
 
+  // thêm: ?_expand=category :nếu muốn lấy thêm thông tin Category trong Product
   public getProducts(): Observable<Product[]> {
     const url = `${this.PRODUCT_API}?_expand=category`;
     return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
 
-  public getProductsByCategory(categoryId: String): Observable<Product[]> {
-    const url = `${this.PRODUCT_API}?_expand=category&categoryId_like=` + categoryId;
+  public getProductsByCategory(categoryId: string): Observable<Product[]> {
+    const url =
+      `${this.PRODUCT_API}?_expand=category&categoryId=${categoryId}`;
     return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
-
-  public getCategories(): Observable<Category[]> {
-    const url = `${this.CATEGORY_API}?_embed=products`;
-    return this.httpClient.get<Category[]>(url, this.httpOptions);
-  }
+  // Solution 2
+  // public getCategoryDetails(categoryId: string): Observable<Category> {
+  //   const url =
+  //     `${this.CATEGORY_API}?_embed=products&id=${categoryId}`;
+  //   return this.httpClient.get<Category>(url, this.httpOptions);
+  // }
 
   public getProductById(id: string): Observable<Product> {
     const url = `${this.PRODUCT_API}/` + id;
