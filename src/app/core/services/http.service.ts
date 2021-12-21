@@ -30,8 +30,7 @@ export class HttpService {
   }
 
   public getProductsByCategory(categoryId: string): Observable<Product[]> {
-    const url =
-      `${this.PRODUCT_API}?_expand=category&categoryId=${categoryId}`;
+    const url = `${this.PRODUCT_API}?_expand=category&categoryId=${categoryId}`;
     return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
   // Solution 2
@@ -44,5 +43,10 @@ export class HttpService {
   public getProductById(id: string): Observable<Product> {
     const url = `${this.PRODUCT_API}/` + id;
     return this.httpClient.get<Product>(url, this.httpOptions);
+  }
+
+  public getProductsByName(name: string): Observable<Product[]> {
+    const url = `${this.PRODUCT_API}?_expand=category&name_like=${name}`;
+    return this.httpClient.get<Product[]>(url, this.httpOptions);
   }
 }

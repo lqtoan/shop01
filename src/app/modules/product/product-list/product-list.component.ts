@@ -47,17 +47,10 @@ export class ProductListComponent implements OnInit {
     });
   }
   search(): void {
-    if (this.name === '') {
-      this.ngOnInit();
-    } else {
-      this.products = this.products.filter((res) => {
-        return res.name
-          .toLocaleLowerCase()
-          .match(this.name.toLocaleLowerCase());
-      });
-    }
-    if (this.products.length === 0) {
-      alert('No products');
-    }
+    console.log(this.products);
+    this.httpService.getProductsByName(this.name).subscribe((data) => {
+      return (this.products = data);
+    });
+    if (this.products.length === 0) alert('No products');
   }
 }

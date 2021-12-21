@@ -10,7 +10,6 @@ import { ProductListComponent } from './product-list/product-list.component';
 import { ProductComponent } from './product.component';
 import { PipesModule } from 'src/app/core/pipes/pipes.module';
 import { FormsModule } from '@angular/forms';
-import { Ng2SearchPipeModule } from 'ng2-search-filter';
 
 @NgModule({
   declarations: [
