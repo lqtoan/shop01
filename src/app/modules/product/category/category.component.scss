@@ -23,9 +23,42 @@
   &__item:hover {
     color: $magenta;
   }
+  &--mobile {
+    display: none;
+  }
+}
+.label {
+  display: none;
 }
 @media screen and (max-width: $mobile) {
+  .label {
+    display: block;
+  }
   .category {
+    &--mobile {
+      .option {
+        background: $black;
+        transition: $transition;
+      }
+      .option:hover {
+        background: $magenta;
+      }
+    }
+    &--mobile:not(:checked) ~ .option {
+      display: none;
+      opacity: 0;
+      transform: translateY(100%);
+    }
+    &--mobile:checked ~ .option {
+      display: block;
+      background: $black;
+      color: $white;
+      padding: 0.5rem;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+
+    display: none;
     flex-flow: column;
     &__item {
       width: 100%;

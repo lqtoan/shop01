@@ -16,3 +16,25 @@
     {{ category.name }}
   </li>
 </nav>
+
+<input type="checkbox" class="category--mobile" id="check" />
+<label class="label" style="font-size: 1.5rem" for="check"> &#9776;</label>
+<label
+  for="check"
+  class="option category--mobile"
+  [routerLink]="['/product']"
+  routerLinkActive="selected"
+  [routerLinkActiveOptions]="{ exact: true }"
+>
+  All
+</label>
+<label
+  for="check"
+  [routerLink]="['/product', category.id]"
+  routerLinkActive="selected"
+  class="option category--mobile"
+  *ngFor="let category of categories"
+  value=""
+>
+  {{ category.name }}
+</label>
