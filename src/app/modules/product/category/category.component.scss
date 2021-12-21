@@ -26,10 +26,9 @@
 }
 @media screen and (max-width: $mobile) {
   .category {
-    // display: none;
-    // font-size: smaller;
+    flex-flow: column;
     &__item {
-      width: max-content;
+      width: 100%;
     }
   }
 }

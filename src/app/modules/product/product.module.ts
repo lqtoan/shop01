@@ -25,7 +25,6 @@ import { Ng2SearchPipeModule } from 'ng2-search-filter';
     FormsModule,
     ProductRoutingModule,
     NgxPaginationModule,
-    Ng2SearchPipeModule,
     PipesModule,
   ],
 })

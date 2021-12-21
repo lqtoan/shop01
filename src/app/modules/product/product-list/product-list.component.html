@@ -5,11 +5,12 @@
       class="form-control"
       type="search"
       name="search"
+      value=""
       [(ngModel)]="name"
+      (keyup.enter)="search()"
       autocomplete="off"
       placeholder="Start searching for a product by name"
     />
-    <input style="display: none" type="submit" (click)="search()" value="ok" />
   </form>
   <div class="pagination">
     <small>Total product: {{ totalRows }}</small>
@@ -26,6 +27,7 @@
   <div class="product-list">
     <div
       class="product"
+      [routerLink]="['/product', category.id, product.id]"
       *ngFor="
         let product of products
           | paginate
