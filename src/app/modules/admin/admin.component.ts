@@ -22,4 +22,12 @@ export class AdminComponent implements OnInit {
       return (this.products = data);
     });
   }
+
+  search(): void {
+    console.log(this.products);
+    this.httpService.getProductsByName(this.name).subscribe((data) => {
+      return (this.products = data);
+    });
+    if (this.products.length === 0) alert('No products');
+  }
 }

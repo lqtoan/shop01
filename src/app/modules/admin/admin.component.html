@@ -4,6 +4,7 @@
   type="text"
   name="search"
   [(ngModel)]="name"
+  (keyup.enter)="search()"
   autocomplete="off"
   placeholder="&#61442;  Start searching for a hero by id or name or country"
 />

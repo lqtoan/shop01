@@ -19,6 +19,7 @@ body {
   color: $black;
   font-family: $primary-font;
   font-display: fallback;
+  overflow-x: hidden;
 }
 
 h1 {
