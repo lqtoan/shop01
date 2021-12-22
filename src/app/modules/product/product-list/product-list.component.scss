@@ -44,6 +44,7 @@
       border-radius: 0.5rem;
       box-shadow: 0 0 0px 1px $white-secondary;
       transition: $transition;
+      cursor: pointer;
       // animation: slideToLeft 500ms ease-in;
       &__image {
         width: 100%;
@@ -69,7 +70,6 @@
       }
     }
     .product:hover {
-      cursor: pointer;
       box-shadow: 0 0 10px 1px rgba($color: $gray, $alpha: 0.5);
     }
   }
@@ -131,7 +131,6 @@
         }
       }
       .product:hover {
-        cursor: pointer;
         box-shadow: 0 0 5px 1px rgba($color: $gray, $alpha: 0.25);
       }
     }

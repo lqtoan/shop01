@@ -2,7 +2,7 @@
 
 .header {
   background: $black;
-  padding: 1rem;
+  padding: 1rem 5rem;
   display: flex;
   flex-flow: row wrap;
   justify-content: flex-start;
@@ -30,5 +30,10 @@
     a:hover {
       color: $magenta;
     }
+  }
+}
+@media screen and (max-width: $mobile) {
+  .header {
+    padding: 1rem;
   }
 }

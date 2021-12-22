@@ -1,7 +1,12 @@
 @import "/src/assets/scss/shared";
 
 .footer {
-  padding: 0.5rem 1rem;
+  padding: 0.5rem 5rem;
   background: $black;
   color: $white;
+}
+@media screen and (max-width: $mobile) {
+  .footer {
+    padding: 1rem;
+  }
 }
