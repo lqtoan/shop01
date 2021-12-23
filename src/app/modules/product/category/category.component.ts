@@ -10,8 +10,8 @@ import { Product } from 'src/app/models/product';
   styleUrls: ['./category.component.scss'],
 })
 export class CategoryComponent implements OnInit {
-  public categories: Category[];
-  public products: Product[];
+  public categories$: Category[];
+  public products$: Product[];
   public totalRows: number;
 
   constructor(
@@ -22,7 +22,7 @@ export class CategoryComponent implements OnInit {
       console.log(data);
       this.totalRows = data.length;
       console.log('Categories: ' + this.totalRows);
-      return (this.categories = data);
+      return (this.categories$ = data);
     });
   }
 }

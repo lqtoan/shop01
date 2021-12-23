@@ -24,9 +24,10 @@
   </div>
   <div class="product-list">
     <div
+      loading="lazy"
       class="product"
       *ngFor="
-        let product of products
+        let product of products$
           | paginate
             : {
                 itemsPerPage: 8,
