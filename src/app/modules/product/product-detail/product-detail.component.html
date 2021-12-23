@@ -1,7 +1,11 @@
-<button (click)="backToList()">Back to list</button>
 <div class="wrapper">
   <div class="product">
-    <img class="product__image" [src]="[product.imgUrl]" alt="image" />
+    <img
+      class="product__image"
+      [src]="[product.imgUrl]"
+      alt="image"
+      loading="eager"
+    />
     <div class="product__info">
       <h3 style="width: 100%" class="product__info__name">
         {{ product.name }}
@@ -10,4 +14,7 @@
       <h2 class="product__info__price">{{ product.price | formatPrice }}</h2>
     </div>
   </div>
+  <button class="backToList" (click)="backToList()">
+    &#8592; Back to list
+  </button>
 </div>

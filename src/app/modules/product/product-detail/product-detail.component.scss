@@ -1,7 +1,20 @@
 @import "/src/assets/scss/shared";
 
+.backToList {
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  background: $white;
+  color: $black;
+  outline: 1px solid $black;
+  border-radius: 0.25rem;
+  transition: $transition;
+}
+.backToList:hover {
+  opacity: 0.75;
+  text-decoration: underline;
+}
 .wrapper {
-  animation: slideToLeft 260ms ease-out;
+  animation: slideToLeft 500ms ease-out 500ms backwards;
   .product {
     margin: 1rem 0;
     padding: 1rem;
@@ -12,7 +25,7 @@
     border-radius: 0.5rem;
     box-shadow: 0 0 0px 1px $white-secondary;
     &__image {
-      width: 100%;
+      width: 50vw;
       height: 25vw;
       object-fit: cover;
       border-radius: 0.25rem;
