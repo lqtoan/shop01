@@ -3,49 +3,47 @@
 .wrapper {
   animation: slideToLeft 1000ms ease-out;
   .product {
-    margin: 0.5rem 0;
+    margin: 1rem 0;
     padding: 1rem;
     display: flex;
-    flex-flow: row nowrap;
-    justify-content: flex-start;
-    align-items: stretch;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
     border-radius: 0.5rem;
     box-shadow: 0 0 0px 1px $white-secondary;
     &__image {
-      width: 50vw;
+      width: 50%;
       height: 25vw;
       object-fit: cover;
       border-radius: 0.25rem;
       box-shadow: 0 0 0px 1px $white-secondary;
     }
     &__info {
-      margin-top: -1.5rem;
+      display: flex;
+      flex-flow: column;
+      text-align: center;
+      margin-top: 0;
       &__price {
         color: $red;
       }
     }
-    &__info * {
-      margin: 1.5rem 0;
-      margin-left: 1.5rem;
+    &__info > * {
+      margin: 0.5rem 0;
     }
   }
 }
 @media screen and (max-width: $mobile) {
   .wrapper {
     .product {
-      flex-flow: row wrap;
-      justify-content: center;
+      padding: 0.5rem;
+      flex-flow: column wrap;
       &__image {
         width: 100%;
         height: 50vw;
       }
       &__info {
-        text-align: center;
-        margin-top: 0;
-      }
-      &__info * {
-        font-size: 100%;
-        margin: 0.5rem 0;
+        font-size: smaller;
+        text-align: left;
       }
     }
   }

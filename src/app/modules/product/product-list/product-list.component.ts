@@ -22,17 +22,18 @@ export class ProductListComponent implements OnInit {
   ngOnInit(): void {
     // Get products by categoryId or get ALL if categoryId null
     this.activatedRoute.paramMap.subscribe((params) => {
+      console.log(params);
       const categoryId = params.get('categoryId');
       if (categoryId === null) {
         this.httpService.getProducts().subscribe((data) => {
-          console.log(data);
+          // console.log(data);
           this.totalRows = data.length;
           console.log('Products: ' + this.totalRows);
           return (this.products = data);
         });
       } else {
         this.httpService.getProductsByCategory(categoryId).subscribe((data) => {
-          console.log(data);
+          // console.log(data);
           this.totalRows = data.length;
           console.log('Products: ' + this.totalRows);
           this.totalRows = data.length;
