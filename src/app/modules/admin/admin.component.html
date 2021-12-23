@@ -20,15 +20,18 @@
 ></pagination-controls>
 <table>
   <tr>
-    <td>Name</td>
-    <td>Price</td>
+    <th>Name</th>
+    <th>Price</th>
+    <th>Category</th>
+    <th>Image Url</th>
+    <th></th>
   </tr>
   <tr
     *ngFor="
       let product of products
         | paginate
           : {
-              itemsPerPage: 1024,
+              itemsPerPage: 24,
               currentPage: currentPage,
               totalItems: totalRows
             }
@@ -37,8 +40,15 @@
     <td>
       {{ product.name }}
     </td>
-    <td>
-      {{ product.price }}
+    <td style="text-align: right">
+      {{ product.price | formatPrice }}
     </td>
+    <td>
+      {{ product.category.name }}
+    </td>
+    <td>
+      {{ product.imgUrl }}
+    </td>
+    <td>Edit</td>
   </tr>
 </table>

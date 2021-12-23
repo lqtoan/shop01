@@ -1,6 +1,13 @@
-table,
-th,
-td {
-  min-width: max-content;
-  border: 1px solid black;
+@import "/src/assets/scss/shared";
+
+table {
+  border-spacing: 0;
+  border: 1px solid $black;
+  td,
+  th {
+    margin: 0;
+    padding: 0.25rem 0.5rem;
+    min-width: max-content;
+    border: 1px solid $black;
+  }
 }

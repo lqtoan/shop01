@@ -6,22 +6,23 @@
     margin: 1rem 0;
     padding: 1rem;
     display: flex;
-    flex-flow: column nowrap;
+    flex-flow: nowrap;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
     border-radius: 0.5rem;
     box-shadow: 0 0 0px 1px $white-secondary;
     &__image {
-      width: 50%;
+      width: 100%;
       height: 25vw;
       object-fit: cover;
       border-radius: 0.25rem;
       box-shadow: 0 0 0px 1px $white-secondary;
     }
     &__info {
+      margin-left: 1rem;
       display: flex;
       flex-flow: column;
-      text-align: center;
+      // text-align: left;
       margin-top: 0;
       &__price {
         color: $red;
@@ -35,13 +36,14 @@
 @media screen and (max-width: $mobile) {
   .wrapper {
     .product {
-      padding: 0.5rem;
+      padding: 0rem 2rem;
       flex-flow: column wrap;
       &__image {
         width: 100%;
         height: 50vw;
       }
       &__info {
+        margin: 0;
         font-size: smaller;
         text-align: left;
       }

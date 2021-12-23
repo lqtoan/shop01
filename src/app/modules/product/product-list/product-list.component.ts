@@ -52,6 +52,6 @@ export class ProductListComponent implements OnInit {
     this.httpService.getProductsByName(this.name).subscribe((data) => {
       return (this.products = data);
     });
-    if (this.products.length === 0) alert('No products');
+    if (this.products.length === 0) { alert('No products'); }
   }
 }
