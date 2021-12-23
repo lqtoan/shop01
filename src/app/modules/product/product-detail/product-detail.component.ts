@@ -1,8 +1,8 @@
 import { HttpService } from '../../../core/services/http.service';
 import { switchMap, map } from 'rxjs/operators';
-import { Product } from '../../../models/product';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Product } from '../../../models/product';
 
 @Component({
   selector: 'app-product-detail',
@@ -13,7 +13,8 @@ export class ProductDetailComponent implements OnInit {
   public product = new Product();
   constructor(
     private activatedRoute: ActivatedRoute,
-    private httpService: HttpService
+    private httpService: HttpService,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
@@ -28,6 +29,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   backToList(): void {
-    alert('Back to List');
+    this.router.navigate(['/products']);
   }
 }
