@@ -1,7 +1,8 @@
-import { HttpService } from '../../../core/services/http.service';
 import { switchMap, map } from 'rxjs/operators';
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
+
+import { HttpService } from '../../../core/services/http.service';
 import { Product } from '../../../models/product';
 
 @Component({
@@ -29,6 +30,6 @@ export class ProductDetailComponent implements OnInit {
   }
 
   backToList(): void {
-    this.router.navigate(['/products']);
+    this.router.navigate(['/product']);
   }
 }

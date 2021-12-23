@@ -4,7 +4,6 @@ import { switchMap, map } from 'rxjs/operators';
 import { Product } from '../../../models/product';
 import { HttpService } from '../../../core/services/http.service';
 import { Component, OnInit } from '@angular/core';
-import { query } from '@angular/animations';
 
 @Component({
   selector: 'app-product-list',
@@ -48,6 +47,7 @@ export class ProductListComponent implements OnInit {
       console.log(orderBy);
     });
   }
+
   search(): void {
     console.log(this.products);
     this.httpService.getProductsByName(this.name).subscribe((data) => {
