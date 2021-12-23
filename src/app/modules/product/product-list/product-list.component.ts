@@ -9,7 +9,7 @@ import { ActivatedRoute } from '@angular/router';
   styleUrls: ['./product-list.component.scss'],
 })
 export class ProductListComponent implements OnInit {
-  public products$: Product[] = [];
+  public products: Product[] = [];
   public totalRows: number;
   public currentPage = 1;
   public name: string;
@@ -28,7 +28,7 @@ export class ProductListComponent implements OnInit {
           console.log(data);
           this.totalRows = data.length;
           console.log('Products: ' + this.totalRows);
-          return (this.products$ = data);
+          return (this.products = data);
         });
       } else {
         this.httpService.getProductsByCategory(categoryId).subscribe((data) => {
@@ -36,7 +36,7 @@ export class ProductListComponent implements OnInit {
           this.totalRows = data.length;
           console.log('Products: ' + this.totalRows);
           this.totalRows = data.length;
-          return (this.products$ = data);
+          return (this.products = data);
         });
         // Solution 2:
         // this.httpService.getCategoryDetails(categoryId).subscribe((data) => {
@@ -47,10 +47,10 @@ export class ProductListComponent implements OnInit {
     });
   }
   search(): void {
-    console.log(this.products$);
+    console.log(this.products);
     this.httpService.getProductsByName(this.name).subscribe((data) => {
-      return (this.products$ = data);
+      return (this.products = data);
     });
-    if (this.products$.length === 0) alert('No products');
+    if (this.products.length === 0) alert('No products');
   }
 }
