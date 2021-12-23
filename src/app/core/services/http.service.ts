@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Product } from '../../models/product';
 import { Category } from 'src/app/models/category';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root',
@@ -10,8 +11,8 @@ import { Category } from 'src/app/models/category';
 export class HttpService {
   constructor(private httpClient: HttpClient) {}
 
-  private PRODUCT_API = 'https://learn-api-v1.herokuapp.com/api/products/';
-  private CATEGORY_API = 'https://learn-api-v1.herokuapp.com/api/categories/';
+  private PRODUCT_API = `${environment.API}/products/`;
+  private CATEGORY_API = `${environment.API}/categories/`;
   private httpOptions = {
     headers: new HttpHeaders({
       'Content-type': 'application/json',

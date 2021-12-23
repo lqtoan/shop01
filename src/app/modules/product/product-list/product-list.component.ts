@@ -1,7 +1,9 @@
+import { ActivatedRoute, Router } from '@angular/router';
+import { switchMap, map } from 'rxjs/operators';
+
 import { Product } from '../../../models/product';
 import { HttpService } from '../../../core/services/http.service';
 import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-product-list',
@@ -16,42 +18,37 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private httpService: HttpService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router: Router
   ) {}
 
   ngOnInit(): void {
     // Get products by categoryId or get ALL if categoryId null
-    this.activatedRoute.paramMap.subscribe((params) => {
-      console.log(params);
-      const categoryId = params.get('categoryId');
-      if (categoryId === null) {
-        this.httpService.getProducts().subscribe((data) => {
-          // console.log(data);
-          this.totalRows = data.length;
-          console.log('Products: ' + this.totalRows);
-          return (this.products = data);
-        });
-      } else {
-        this.httpService.getProductsByCategory(categoryId).subscribe((data) => {
-          // console.log(data);
-          this.totalRows = data.length;
-          console.log('Products: ' + this.totalRows);
-          this.totalRows = data.length;
-          return (this.products = data);
-        });
-        // Solution 2:
-        // this.httpService.getCategoryDetails(categoryId).subscribe((data) => {
-        //   console.log(data.products);
-        // return (this.products = data.products);
-        // });
-      }
-    });
+    this.activatedRoute.paramMap
+      .pipe(
+        map((params) => params.get('categoryId')),
+        switchMap((categoryId) => {
+          console.log(categoryId);
+          if (categoryId) {
+            return this.httpService.getProductsByCategory(categoryId);
+          } else {
+            return this.httpService.getProducts();
+          }
+        })
+      )
+      .subscribe(
+        (products) => (
+          (this.products = products), (this.totalRows = products.length)
+        )
+      );
   }
   search(): void {
     console.log(this.products);
     this.httpService.getProductsByName(this.name).subscribe((data) => {
       return (this.products = data);
     });
-    if (this.products.length === 0) { alert('No products'); }
+    if (this.products.length === 0) {
+      alert('No products');
+    }
   }
 }
