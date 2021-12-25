@@ -22,9 +22,7 @@ export class ProductDetailComponent implements OnInit {
     this.activatedRoute.paramMap
       .pipe(
         map((params) => params.get('id')),
-        switchMap((id) => {
-          return this.httpService.getProductById(id);
-        })
+        switchMap((id) => this.httpService.getProductById(id))
       )
       .subscribe((product) => (this.product = product));
   }
