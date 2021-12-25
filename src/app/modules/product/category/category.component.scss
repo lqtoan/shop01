@@ -33,6 +33,7 @@
 @media screen and (max-width: $mobile) {
   .label {
     display: block;
+    margin: 0 !important;
   }
   .category {
     &--mobile {
@@ -50,6 +51,14 @@
       transform: translateY(100%);
     }
     &--mobile:checked ~ .option {
+      display: block;
+      background: $black;
+      color: $white;
+      padding: 0.5rem;
+      opacity: 1;
+      transform: translateY(0%);
+    }
+    &--mobile:checked ~ .label {
       display: block;
       background: $black;
       color: $white;

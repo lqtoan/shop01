@@ -10,10 +10,10 @@ export class AppComponent implements OnInit {
   constructor() {}
 
   ngOnInit(): void {
-    // setTimeout(() =>
-    //   alert(
-    //     'API được deploy ở Heroku, do dùng Hosting miễn phí nên sau 30 phút không có request gửi tới nó sẽ sleep! Vui lòng đợi 30 giây đến 1 phút nhé|'
-    //   ), 1000
-    // );
+    setTimeout(() =>
+      alert(
+        'API được deploy ở Heroku, do dùng Hosting miễn phí nên sau 30 phút không có request gửi tới nó sẽ sleep! Vui lòng đợi 30 giây đến 1 phút nhé|'
+      ), 1000
+    );
   }
 }

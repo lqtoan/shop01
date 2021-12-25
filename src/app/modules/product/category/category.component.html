@@ -1,12 +1,12 @@
 <nav class="category">
-  <li
+  <!-- <li
     [routerLink]="['/product']"
     routerLinkActive="selected"
     [routerLinkActiveOptions]="{ exact: true }"
     class="category__item"
   >
     All
-  </li>
+  </li> -->
   <li
     [routerLink]="['/product', category.id]"
     routerLinkActive="selected"
@@ -18,9 +18,18 @@
 </nav>
 
 <input type="checkbox" class="category--mobile" id="check" />
-<label class="label" style="margin: 0.25rem 0; font-size: 1.5rem" for="check">
-  &#9776;</label
+<label
+  class="label"
+  style="
+    margin: 0.25rem 0;
+    padding: 0.5rem;
+    font-size: 1.5rem;
+    border: 1px solid #2e3440;
+  "
+  for="check"
 >
+  &#9776;
+</label>
 <label
   for="check"
   class="option category--mobile"
