@@ -10,7 +10,6 @@ import { Product } from 'src/app/models/product';
 })
 export class CategoryComponent implements OnInit {
   public categories: Category[];
-  public products: Product[];
   public totalRows: number;
 
   constructor(private httpService: HttpService) {}
@@ -18,7 +17,6 @@ export class CategoryComponent implements OnInit {
   ngOnInit(): void {
     this.httpService.getCategories().subscribe((data) => {
       console.table(data);
-      console.log('Categories: ' + this.totalRows);
       (this.categories = data), (this.totalRows = data.length);
     });
   }
