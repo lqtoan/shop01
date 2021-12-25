@@ -12,6 +12,7 @@ export class AdminComponent implements OnInit {
   public totalRows: number;
   public currentPage = 1;
   name: any;
+  items = ['item1', 'item2'];
 
   constructor(private httpService: HttpService) {}
 
@@ -28,6 +29,12 @@ export class AdminComponent implements OnInit {
     this.httpService.getProductsByName(this.name).subscribe((data) => {
       return (this.products = data);
     });
-    if (this.products.length === 0) alert('No products');
+    if (this.products.length === 0) {
+      alert('No products');
+    }
+  }
+
+  addItem(newItem: string): void {
+    this.items.push(newItem);
   }
 }

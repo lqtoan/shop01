@@ -1,4 +1,10 @@
 <p>Product List</p>
+
+<app-product-add (newItemEvent)="addItem($event)"></app-product-add>
+<ul>
+  <li *ngFor="let item of items">{{ item }}</li>
+</ul>
+
 <input
   class="form-control"
   type="text"
