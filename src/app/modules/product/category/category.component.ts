@@ -14,15 +14,13 @@ export class CategoryComponent implements OnInit {
   public products: Product[];
   public totalRows: number;
 
-  constructor(
-    private httpService: HttpService  ) {}
+  constructor(private httpService: HttpService) {}
 
   ngOnInit(): void {
     this.httpService.getCategories().subscribe((data) => {
-      console.log(data);
-      this.totalRows = data.length;
+      console.table(data);
       console.log('Categories: ' + this.totalRows);
-      return (this.categories = data);
+      (this.categories = data), (this.totalRows = data.length);
     });
   }
 }
