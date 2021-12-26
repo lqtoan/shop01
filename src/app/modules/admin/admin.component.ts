@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { Product } from 'src/app/models/product';
-import { HttpService } from '../../core/services/http.service';
+import { ProductService } from '../../core/services/product.service';
 
 @Component({
   selector: 'app-admin',
@@ -14,10 +14,10 @@ export class AdminComponent implements OnInit {
   name: any;
   items = ['item1', 'item2'];
 
-  constructor(private httpService: HttpService) {}
+  constructor(private productService: ProductService) {}
 
   ngOnInit(): void {
-    this.httpService.getProducts().subscribe((data) => {
+    this.productService.getProducts().subscribe((data) => {
       this.totalRows = data.length;
       console.log(this.totalRows);
       return (this.products = data);
@@ -26,7 +26,7 @@ export class AdminComponent implements OnInit {
 
   search(): void {
     console.log(this.products);
-    this.httpService.getProductsByName(this.name).subscribe((data) => {
+    this.productService.getProductsByName(this.name).subscribe((data) => {
       return (this.products = data);
     });
     if (this.products.length === 0) {

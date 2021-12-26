@@ -2,7 +2,7 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { switchMap, map } from 'rxjs/operators';
 
 import { Product } from '../../../models/product';
-import { HttpService } from '../../../core/services/http.service';
+import { ProductService } from '../../../core/services/product.service';
 import { Component, OnInit } from '@angular/core';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProductListComponent implements OnInit {
   public name: string;
 
   constructor(
-    private httpService: HttpService,
+    private productService: ProductService,
     private activatedRoute: ActivatedRoute,
     private router: Router
   ) {}
@@ -30,9 +30,9 @@ export class ProductListComponent implements OnInit {
         switchMap((categoryId) => {
           console.log(categoryId);
           if (categoryId) {
-            return this.httpService.getProductsByCategory(categoryId);
+            return this.productService.getProductsByCategory(categoryId);
           } else {
-            return this.httpService.getProducts();
+            return this.productService.getProducts();
           }
         })
       )
@@ -50,9 +50,9 @@ export class ProductListComponent implements OnInit {
 
   search(): void {
     console.log(this.products);
-    this.httpService.getProductsByName(this.name).subscribe((data) => {
-      return (this.products = data);
-    });
+    this.productService
+      .getProductsByName(this.name)
+      .subscribe((data) => (this.products = data));
     if (this.products.length === 0) {
       alert('No products');
     }
