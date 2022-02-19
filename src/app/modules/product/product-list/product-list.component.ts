@@ -18,15 +18,17 @@ export class ProductListComponent implements OnInit {
 
   constructor(
     private productService: ProductService,
-    private activatedRoute: ActivatedRoute,
-    private router: Router
+    private activatedRoute: ActivatedRoute
   ) {}
 
   ngOnInit(): void {
     // Get products by categoryId or get ALL if categoryId null
     this.activatedRoute.paramMap
       .pipe(
-        map((params) => params.get('categoryId')),
+        map((params) => {
+          console.log(params);
+          return params.get('categoryId');
+        }),
         switchMap((categoryId) => {
           console.log(categoryId);
           if (categoryId) {
@@ -36,11 +38,11 @@ export class ProductListComponent implements OnInit {
           }
         })
       )
-      .subscribe(
-        (products) => (
-          (this.products = products), (this.totalRows = products.length)
-        )
-      );
+      .subscribe((products) => {
+        this.products = products;
+        this.totalRows = products.length;
+        console.log(products);
+      });
 
     this.activatedRoute.queryParamMap.subscribe((query) => {
       const orderBy = query.get('orderby');
